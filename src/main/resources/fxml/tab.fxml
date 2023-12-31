@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Tab fx:id="tab" xmlns:fx="http://javafx.com/fxml/1" styleClass="box" fx:controller="org.matswuuu.cristalixaccountchanger.controllers.TabController" onCloseRequest="#closeTab">
+    <AnchorPane>
+        <Button fx:id="playAllButton" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0"
+                text="Запустить все" onAction="#onPlayAllButtonClick"/>
+        <Button fx:id="getTokenButton" layoutX="340.0" layoutY="20.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0"
+                 text="Токен" onAction="#onGetTokenButtonClick"/>
+        <ScrollPane id="accounts-scroll-pane" hbarPolicy="NEVER" layoutY="70.0" prefHeight="500.0" prefWidth="450.0"
+                    vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+            <GridPane fx:id="accountsGridPane" id="accounts" hgap="10.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+                      prefWidth="450.0" >
+                <columnConstraints>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="1.0"/>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="250.0"/>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="0.0" prefWidth="0.0"/>
+                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="130.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <opaqueInsets>
+                </opaqueInsets>
+            </GridPane>
+        </ScrollPane>
+        <Button fx:id="addAccountButton" id="add-account-button" layoutX="290.0" layoutY="20.0" mnemonicParsing="false" prefHeight="40.0"
+                prefWidth="40.0" text="+" onAction="#onAddAccountButtonClick"/>
+    </AnchorPane>
+</Tab>

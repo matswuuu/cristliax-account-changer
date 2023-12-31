@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#windowDragged" onMousePressed="#windowPressed" prefHeight="230.0" prefWidth="300.0" stylesheets="@../css/alert.css" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.matswuuu.cristalixaccountchanger.controllers.AlertController">
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="75.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/icons/download.gif" />
+    </ImageView>
+   <Label layoutX="30.0" layoutY="190.0" text="Пожалуйста, подождите..." />
+   <Button layoutX="255.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="30.0" prefWidth="30.0" styleClass="close-button">
+      <graphic>
+          <ImageView>
+              <Image url="@../images/icons/close.png"/>
+          </ImageView>
+      </graphic>
+   </Button>
+</AnchorPane>
