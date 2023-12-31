@@ -5,7 +5,7 @@
 - Установить [JRE](https://www.java.com/ru/download/manual.jsp)
 - Скачать [AccountChanger](https://github.com/matswuuu/Cristalix-AccountChanger/releases/download/v0.0.1/AccountChanger.jar)
 
-# Получение токена - [Видео](https://github.com/matswuuu/Cristalix-AccountChanger)
+# Получение токена - [Видео](https://youtu.be/pxWXtS_-Xp8)
 - Откройте лаунчер Cristalix 
 - Войдите в аккаунт
 - Закройте лаунчер
