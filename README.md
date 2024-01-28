@@ -1,4 +1,4 @@
-# Cristalix Account Changer
+# Cristalix AccountChanger
 Программа для смены аккаунтов в лаунчере Cristalix
 
 # Установка 
