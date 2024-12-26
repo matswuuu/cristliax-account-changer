@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
+
 <TextField fx:id="loginField" fx:controller="org.matswuuu.cristalixaccountchanger.controllers.LoginFieldController" xmlns:fx="http://javafx.com/fxml/1" prefHeight="40" styleClass="login-text-field" promptText="Логин" onKeyReleased="#onKeyRelease">
     <GridPane.margin>
         <Insets top="15.0"/>

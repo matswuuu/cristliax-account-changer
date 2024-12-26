@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Cristalix-AccountChanger.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Cristalix_AccountChanger_main_jar</output-path>
+    <root id="archive" name="Cristalix-AccountChanger.main.jar">
+      <element id="module-output" name="Cristalix-AccountChanger.main" />
+      <element id="artifact" artifact-name="artifact" />
+    </root>
+  </artifact>
+</component>

@@ -4,7 +4,6 @@ import javafx.fxml.FXML
 import javafx.scene.input.MouseEvent
 import javafx.scene.layout.AnchorPane
 import javafx.stage.Stage
-import org.matswuuu.cristalixaccountchanger.Main
 
 class AlertController {
     @FXML

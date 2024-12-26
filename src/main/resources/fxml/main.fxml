@@ -1,156 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" id="anchor" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#windowDragged" onMousePressed="#windowPressed"
-            prefHeight="650.0" prefWidth="1220.0" stylesheets="@../css/style.css"
-            xmlns="http://javafx.com/javafx/8.0.202-ea" fx:controller="org.matswuuu.cristalixaccountchanger.controllers.Controller" >
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="anchor" fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#windowDragged" onMousePressed="#windowPressed" prefHeight="650.0" prefWidth="1220.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.matswuuu.cristalixaccountchanger.controllers.Controller">
     <cursor>
-        <Cursor fx:constant="DEFAULT"/>
+        <Cursor fx:constant="DEFAULT" />
     </cursor>
 
     <clip>
-        <Rectangle arcHeight="15" arcWidth="15" height="650.0" width="1220.0"/>
+        <Rectangle arcHeight="15" arcWidth="15" height="650.0" width="1220.0" />
     </clip>
 
-    <TabPane fx:id="accountsTabPane" layoutX="20.0" layoutY="50.0" minHeight="-Infinity" prefHeight="580.0"
-             prefWidth="450.0" styleClass="box" tabClosingPolicy="ALL_TABS">
-        <Tab fx:id="addNewTab" closable="false" text="+"  onSelectionChanged="#onTabSelected">
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="180.0"/>
+    <TabPane fx:id="accountsTabPane" layoutX="20.0" layoutY="50.0" minHeight="-Infinity" prefHeight="580.0" prefWidth="450.0" styleClass="box" tabClosingPolicy="ALL_TABS">
+        <Tab fx:id="addNewTab" closable="false" onSelectionChanged="#onTabSelected" text="+">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="180.0" />
         </Tab>
     </TabPane>
 
-    <Pane layoutX="495.0" layoutY="50.0" prefHeight="580.0" prefWidth="710.0" styleClass="box">
-        <Slider fx:id="memorySlider" disable="true" layoutX="40.0" layoutY="60.0" max="8192.0" min="512.0"
-                prefWidth="635" styleClass="memory-slider"/>
-        <Label fx:id="memoryLabel" layoutX="65.0" layoutY="90.0" styleClass="settings-font"
-               text="RAM для игры: автоматически"/>
-        <CheckBox fx:id="autoMemoryCheckBox" layoutX="465.0" layoutY="90.0"
-                  selected="true" styleClass="settings-checkbox" text="Автоматически" onAction="#onAutoMemorySelect"/>
-        <CheckBox fx:id="disableDiscordRPCCheckBox" layoutX="70.0" layoutY="225.0" 
-                  styleClass="settings-checkbox" text="Отключить Discord RPC" onAction="#onSettingsNodeAction"/>
-        <CheckBox fx:id="clientFullscreenCheckBox" layoutX="420.0" layoutY="225.0" 
-                  styleClass="settings-checkbox" text="Клиент в полный экран" onAction="#onSettingsNodeAction"/>
-        <CheckBox fx:id="autoEnterCheckBox" layoutX="70.0" layoutY="275.0" 
-                  styleClass="settings-checkbox" text="Автовход на сервер" onAction="#onSettingsNodeAction"/>
-        <CheckBox fx:id="debugModeCheckBox" layoutX="420.0" layoutY="275.0" 
-                  styleClass="settings-checkbox" text="Режим отладки" onAction="#onSettingsNodeAction"/>
-        <CheckBox fx:id="minimalGraphicSettingsCheckBox" layoutX="70.0" layoutY="160.0" 
-                  styleClass="settings-checkbox" text="Минимальные настройки графики" onAction="#onSettingsNodeAction"/>
-        <PasswordField fx:id="tokenTextField" layoutX="40.0" layoutY="500.0"
-                       prefHeight="25.0" prefWidth="600.0" promptText="Токен" onKeyReleased="#onSettingsNodeAction"/>
-        <HBox fx:id="backgroundsHBox" alignment="CENTER" layoutX="40.0" layoutY="385.0" prefHeight="20.0"
-              prefWidth="635.0" spacing="20.0">
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                    prefHeight="68.0" prefWidth="68.0"
-                    styleClass="background-button" onAction="#onImageButtonClick">
+    <Pane layoutX="495.0" layoutY="50.0" prefHeight="510.0" prefWidth="710.0" styleClass="box">
+        <Slider fx:id="memorySlider" disable="true" layoutX="40.0" layoutY="40.0" max="8192.0" min="512.0" prefWidth="635" styleClass="memory-slider" />
+        <Label fx:id="memoryLabel" layoutX="65.0" layoutY="70.0" styleClass="settings-font" text="RAM для игры: автоматически" />
+        <CheckBox fx:id="autoMemoryCheckBox" layoutX="465.0" layoutY="70.0" onAction="#onAutoMemorySelect" selected="true" styleClass="settings-checkbox" text="Автоматически" />
+        <CheckBox fx:id="disableDiscordRPCCheckBox" layoutX="70.0" layoutY="205.0" onAction="#onSettingsNodeAction" styleClass="settings-checkbox" text="Отключить Discord RPC" />
+        <CheckBox fx:id="clientFullscreenCheckBox" layoutX="420.0" layoutY="205.0" onAction="#onSettingsNodeAction" styleClass="settings-checkbox" text="Клиент в полный экран" />
+        <CheckBox fx:id="autoEnterCheckBox" layoutX="70.0" layoutY="255.0" onAction="#onSettingsNodeAction" styleClass="settings-checkbox" text="Автовход на сервер" />
+        <CheckBox fx:id="debugModeCheckBox" layoutX="420.0" layoutY="255.0" onAction="#onSettingsNodeAction" styleClass="settings-checkbox" text="Режим отладки" />
+        <CheckBox fx:id="minimalGraphicSettingsCheckBox" layoutX="70.0" layoutY="140.0" onAction="#onSettingsNodeAction" styleClass="settings-checkbox" text="Минимальные настройки графики" />
+        <PasswordField fx:id="tokenTextField" layoutX="40.0" layoutY="430.0" onKeyReleased="#onSettingsNodeAction" prefHeight="25.0" prefWidth="600.0" promptText="Токен" />
+        <HBox fx:id="backgroundsHBox" alignment="CENTER" layoutX="40.0" layoutY="335.0" prefHeight="20.0" prefWidth="635.0" spacing="20.0">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onImageButtonClick" prefHeight="68.0" prefWidth="68.0" styleClass="background-button">
                 <graphic>
                     <ImageView>
                         <clip>
-                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68"/>
+                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68" />
                         </clip>
-                        <Image url="@../images/backgrounds/previews/0.png"/>
+                        <Image url="@../images/backgrounds/previews/0.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                    prefHeight="68.0" prefWidth="68.0"
-                    styleClass="background-button" onAction="#onImageButtonClick">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onImageButtonClick" prefHeight="68.0" prefWidth="68.0" styleClass="background-button">
                 <graphic>
                     <ImageView>
                         <clip>
-                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68"/>
+                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68" />
                         </clip>
-                        <Image url="@../images/backgrounds/previews/1.png"/>
+                        <Image url="@../images/backgrounds/previews/1.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                    prefHeight="68.0" prefWidth="68.0"
-                    styleClass="background-button" onAction="#onImageButtonClick">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onImageButtonClick" prefHeight="68.0" prefWidth="68.0" styleClass="background-button">
                 <graphic>
                     <ImageView>
                         <clip>
-                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68"/>
+                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68" />
                         </clip>
-                        <Image url="@../images/backgrounds/previews/2.png"/>
+                        <Image url="@../images/backgrounds/previews/2.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                  prefHeight="68.0" prefWidth="68.0"
-                    styleClass="background-button" onAction="#onImageButtonClick">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onImageButtonClick" prefHeight="68.0" prefWidth="68.0" styleClass="background-button">
                 <graphic>
                     <ImageView>
                         <clip>
-                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68"/>
+                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68" />
                         </clip>
-                        <Image url="@../images/backgrounds/previews/3.png"/>
+                        <Image url="@../images/backgrounds/previews/3.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                     prefHeight="68.0" prefWidth="68.0"
-                    styleClass="background-button" onAction="#onImageButtonClick">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onImageButtonClick" prefHeight="68.0" prefWidth="68.0" styleClass="background-button">
                 <graphic>
                     <ImageView>
                         <clip>
-                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68"/>
+                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68" />
                         </clip>
-                        <Image url="@../images/backgrounds/previews/4.png"/>
+                        <Image url="@../images/backgrounds/previews/4.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                     prefHeight="68.0" prefWidth="68.0"
-                    styleClass="background-button" onAction="#onImageButtonClick">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onImageButtonClick" prefHeight="68.0" prefWidth="68.0" styleClass="background-button">
                 <graphic>
                     <ImageView>
                         <clip>
-                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68"/>
+                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68" />
                         </clip>
-                        <Image url="@../images/backgrounds/previews/5.png"/>
+                        <Image url="@../images/backgrounds/previews/5.png" />
                     </ImageView>
                 </graphic>
             </Button>
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                     prefHeight="68.0" prefWidth="68.0"
-                    styleClass="background-button" onAction="#onImageButtonClick">
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#onImageButtonClick" prefHeight="68.0" prefWidth="68.0" styleClass="background-button">
                 <graphic>
                     <ImageView>
                         <clip>
-                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68"/>
+                            <Rectangle arcHeight="15" arcWidth="15" height="68" width="68" />
                         </clip>
-                        <Image url="@../images/backgrounds/previews/6.png"/>
+                        <Image url="@../images/backgrounds/previews/6.png" />
                     </ImageView>
                 </graphic>
             </Button>
         </HBox>
-        <Label layoutX="290.0" layoutY="350.0" styleClass="settings-font" text="Фон лаунчера"/>
-        <Button fx:id="removeAccountButton" id="deleteAccountButton" layoutX="655.0" layoutY="500.0" maxHeight="-Infinity" maxWidth="-Infinity"
-                minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
-                prefHeight="40.0" prefWidth="40.0" styleClass="delete-account-button" text="-" onAction="#onRemoveAccountButtonClick"/>
+        <Label layoutX="290.0" layoutY="300.0" styleClass="settings-font" text="Фон лаунчера" />
+        <Button id="deleteAccountButton" fx:id="removeAccountButton" layoutX="655.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onRemoveAccountButtonClick" prefHeight="40.0" prefWidth="40.0" styleClass="delete-account-button" text="-" />
     </Pane>
     <Pane layoutX="1145.0" layoutY="14.0">
-        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                 prefHeight="30.0" prefWidth="30.0" styleClass="minimize-button" onAction="#minimize">
+        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#minimize" prefHeight="30.0" prefWidth="30.0" styleClass="minimize-button">
             <graphic>
                 <ImageView>
-                    <Image url="@../images/icons/minimize.png"/>
+                    <Image url="@../images/icons/minimize.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button layoutX="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                 prefHeight="30.0" prefWidth="30.0" styleClass="close-button" onAction="#close">
+        <Button layoutX="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#close" prefHeight="30.0" prefWidth="30.0" styleClass="close-button">
             <graphic>
                 <ImageView>
-                    <Image url="@../images/icons/close.png"/>
+                    <Image url="@../images/icons/close.png" />
                 </ImageView>
             </graphic>
         </Button>
     </Pane>
+   <PasswordField fx:id="discordTextField" layoutX="495.0" layoutY="580.0" prefHeight="50.0" prefWidth="710.0" promptText="Discord Bot токен" onKeyReleased="#initializeDiscord"/>
 </AnchorPane>

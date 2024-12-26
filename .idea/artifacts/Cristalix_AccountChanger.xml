@@ -1,0 +1,55 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Cristalix-AccountChanger">
+    <output-path>$PROJECT_DIR$/out/artifacts/Cristalix_AccountChanger</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="org.matswuuu.cristalixaccountchanger.Main" />
+        <option name="description" value="Программа для смены аккаунтов в лаунчере Cristalix." />
+        <option name="height" value="650" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="linuxIcon" value="$PROJECT_DIR$/src/main/resources/images/icons/icon.png" />
+            <option name="windowsIcon" value="$PROJECT_DIR$/src/main/resources/images/icons/icon.ico" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="title" value="Cristalix AccountChanger" />
+        <option name="vendor" value="matswuuu" />
+        <option name="version" value="0.0.2" />
+        <option name="width" value="1220" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Cristalix_AccountChanger.jar">
+        <element id="dir-copy" path="$PROJECT_DIR$/src/main/resources" />
+        <element id="module-output" name="Cristalix-AccountChanger.main" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$USER_HOME$/Рабочий стол/Cristalix-AccountChanger/src/main/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-collections4/4.4/62ebe7544cb7164d87e0637a2a6a2bdc981395e8/commons-collections4-4.4.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.15.1/f11560da189ab563a5c8e351941415430e9304ea/commons-io-2.15.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/b3add478d4382b78ea20b1671390a858002feb6c/gson-2.10.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.16.0/dc30995f7428c0a405eba9b8c619b20d2b3b9905/jackson-annotations-2.16.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.16.0/899e5cf01be55fbf094ad72b2edb0c5df99111ee/jackson-core-2.16.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.16.0/3a6b7f8ff7b30d518bbd65678e9c30cd881f19a7/jackson-databind-2.16.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/5.0.0-beta.19/3154e9768ac9cb381beaba24c40e3e3413c2fad5/JDA-5.0.0-beta.19.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/4.4.0/cb208278274bf12ebdb56c61bd7407e6f774d65a/jna-4.4.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.json/json/20231013/e22e0c040fe16f04ffdb85d851d77b07fc05ea52/json-20231013.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.9.22/d6c44cd08d8f3f9bece8101216dbe6553365c6e3/kotlin-stdlib-1.9.22.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.9.22/c4b17283ad7939e778989663f8301d871987fa5e/kotlin-stdlib-jdk7-1.9.22.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.9.22/dea0c11e2fa503ab891c8a090e3b54754472975d/kotlin-stdlib-jdk8-1.9.22.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.neovisionaries/nv-websocket-client/2.14/1b66d37914b232cef45e56ec8c01907620de9e3a/nv-websocket-client-2.14.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/4.12.0/2f4525d4a200e97e1b87449c2cd9bd2e25b7e8cd/okhttp-4.12.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-jvm/3.6.0/5600569133b7bdefe1daf9ec7f4abeb6d13e1786/okio-jvm-3.6.0.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/club.minnced/opus-java/1.1.1/6656bf7d92e3bc058beb8f0f8a14fe9bc02da4b8/opus-java-1.1.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/club.minnced/opus-java-api/1.1.1/63c6910fb1f7eebbfd922a01d37a4b94fa0ee5e3/opus-java-api-1.1.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/club.minnced/opus-java-natives/1.1.1/183af66d80cd508bbf45343f30ee280e0750f416/opus-java-natives-1.1.1.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/ch.qos.reload4j/reload4j/1.2.22/f9d9e55d1072d7a697d2bf06e1847e93635a7cf9/reload4j-1.2.22.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/2.0.11/ad96c3f8cf895e696dd35c2bc8e8ebe710be9e6d/slf4j-api-2.0.11.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-reload4j/2.0.11/53cc3ab9cfe899c022f3402f4002ef8ec95c01c9/slf4j-reload4j-2.0.11.jar" path-in-jar="/" />
+        <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.sf.trove4j/trove4j/3.0.3/42ccaf4761f0dfdfa805c9e340d99a755907e2dd/trove4j-3.0.3.jar" path-in-jar="/" />
+      </element>
+    </root>
+  </artifact>
+</component>

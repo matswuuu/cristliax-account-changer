@@ -1,5 +1,7 @@
 package org.matswuuu.cristalixaccountchanger
 
+import com.google.gson.Gson
+import discord.Discord
 import javafx.application.Application
 import javafx.concurrent.Task
 import javafx.fxml.FXMLLoader
@@ -16,6 +18,7 @@ import org.apache.commons.io.IOUtils
 import org.json.JSONArray
 import org.json.JSONObject
 import org.matswuuu.cristalixaccountchanger.controllers.Controller
+import org.matswuuu.cristalixaccountchanger.controllers.PlayButtonController
 import org.matswuuu.cristalixaccountchanger.controllers.TabController
 import java.io.BufferedInputStream
 import java.io.File
@@ -25,38 +28,12 @@ import java.net.URL
 
 
 class Main : Application() {
-    companion object {
-        val tabsMap = LinkedHashMap<Tab, LinkedHashMap<TextField, JSONObject>>()
-
-        val configFile = File("config.json")
-
-        lateinit var launcherExePath: String
-        lateinit var launcherJsonPath: String
-
-        lateinit var stage: Stage
-
-        fun saveConfig() {
-            val configJson = JSONObject()
-
-            val tabJsonArray = JSONArray()
-            for (v in tabsMap.values) {
-                val tabJson = JSONArray()
-                for (k in v.values) tabJson.put(k)
-
-                tabJsonArray.put(tabJson)
-            }
-
-            configJson.put("launcherExePath", launcherExePath).put("launcherJsonPath", launcherJsonPath).put("tabs", tabJsonArray)
-
-
-            val outputStream = FileOutputStream(configFile)
-            IOUtils.write(configJson.toString(), outputStream, Charsets.UTF_8)
-        }
-    }
 
     override fun start(primaryStage: Stage) {
+        PlayButtonController.StartThread.start()
+
         stage = primaryStage
-        stage.icons.add(Image(Main::class.java.getResource("/images/icons/icon.png")?.toString()))
+        stage.icons.add(Image(javaClass.getResource("/images/icons/icon.png")?.toString()))
 
         stage.title = "Cristalix AccountChanger by matswuuu"
         stage.initStyle(StageStyle.TRANSPARENT)
@@ -92,6 +69,16 @@ class Main : Application() {
 
         val configJson = JSONObject(jsonText)
 
+
+        if (configJson.has("discordToken")) {
+            val discordToken = configJson.getString("discordToken")
+
+            if (discordToken.isNotEmpty()) {
+                Controller.instance.discordTextField.text = discordToken
+                Discord.initialize(discordToken)
+            }
+        }
+
         if (!configJson.has("launcherExePath") || !configJson.has("launcherJsonPath")) {
             createConfigFile()
             return
@@ -103,14 +90,16 @@ class Main : Application() {
         for (tabJson in configJson.getJSONArray("tabs") as JSONArray) {
             val tab = Controller.instance.createTab()
 
-            for (accountJson in tabJson as JSONArray) {
-                TabController.tabControllerMap[tab]?.addAccount(accountJson as JSONObject)
+            for (json in tabJson as JSONArray) {
+                TabController.tabControllerMap[tab]!!.addAccount(
+                    Gson().fromJson(json.toString(), Account::class.java)
+                )
             }
         }
 
         val tabs = Controller.instance.accountsTabPane.tabs
 
-        TabController.tabControllerMap[tabs[0]]?.closeTab()
+        TabController.tabControllerMap[tabs[0]]!!.closeTab()
     }
 
     private fun createConfigFile() {
@@ -135,7 +124,7 @@ class Main : Application() {
         stage.show()
     }
 
-    private fun checkPaths() : Task<Void> {
+    private fun checkPaths(): Task<Void> {
         val task = object : Task<Void>() {
             override fun call(): Void? {
                 if (launcherExePath.isEmpty() || !File(launcherExePath).exists()) downloadLauncher()
@@ -145,15 +134,14 @@ class Main : Application() {
             }
         }
 
-        task.setOnSucceeded { _ ->
-            showMain()
-        }
+        task.setOnSucceeded { showMain() }
 
         return task
     }
 
     private fun downloadLauncher() {
-        val url = URL("https://webdata.c7x.dev/sworroo/CristalixLauncher.exe")
+//        val url = URL("https://webdata.c7x.dev/sworroo/CristalixLauncher.exe")
+        val url = URL("https://download.jetbrains.com/idea/ideaIU-243.15521.24.exe")
         val bis = BufferedInputStream(url.openStream())
 
         val launcherExeFile = File("CristalixLauncher.exe")
@@ -181,10 +169,42 @@ class Main : Application() {
         }
 
         val listFiles = file.listFiles()
-        if (file.isFile || listFiles == null) return
+        if (file.isFile || (listFiles == null)) return
 
         for (listFile in listFiles) {
             searchFile(listFile.absolutePath)
+        }
+    }
+
+    companion object {
+        val tabsMap = LinkedHashMap<Tab, LinkedHashMap<TextField, Account>>()
+
+        val configFile = File("config.json")
+
+        lateinit var launcherExePath: String
+        lateinit var launcherJsonPath: String
+
+        lateinit var stage: Stage
+
+        fun saveConfig() {
+            val configJson = JSONObject()
+
+            val tabJsonArray = JSONArray()
+            tabsMap.values.forEach { v ->
+                val tabJson = JSONArray()
+                v.values.forEach { tabJson.put(Gson().toJson(it)) }
+
+                tabJsonArray.put(tabJson)
+            }
+
+            configJson
+                .put("launcherExePath", launcherExePath)
+                .put("launcherJsonPath", launcherJsonPath)
+                .put("discordToken", Discord.token)
+                .put("tabs", tabJsonArray)
+
+            val outputStream = FileOutputStream(configFile)
+            IOUtils.write(configJson.toString(), outputStream, Charsets.UTF_8)
         }
     }
 }
