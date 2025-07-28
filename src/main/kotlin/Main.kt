@@ -153,7 +153,8 @@ class Main : Application() {
     }
 
     private fun downloadLauncher() {
-        val url = URL("https://webdata.c7x.dev/sworroo/CristalixLauncher.exe")
+        val url = URL("https://cristalix.gg/content/launcher/Cristalix.exe")
+        println("downloading launcher from $url")
         val bis = BufferedInputStream(url.openStream())
 
         val launcherExeFile = File("CristalixLauncher.exe")
@@ -177,6 +178,7 @@ class Main : Application() {
         val file = File(path)
         if (file.isFile && file.toString().endsWith(".launcher")) {
             launcherJsonPath = file.absolutePath
+            println("found .launcher file ${file.absolutePath}")
             return
         }
 

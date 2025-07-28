@@ -5,4 +5,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'Cristalix-AccountChanger'
+rootProject.name = "Cristalix-AccountChanger"
